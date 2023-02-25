@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stallapp.View.CalendarPage"
+             xmlns:xc="clr-namespace:XCalendar.Maui.Views;assembly=XCalendar.Maui"
+             xmlns:viewmodel="clr-namespace:Stallapp.ViewModel"
+             x:DataType="viewmodel:CalendarViewModel"
+             Title="Kalender">
+
+    <StackLayout>
+        <xc:CalendarView
+            Days="{Binding MyCalendar.Days}"
+            DaysOfWeek="{Binding MyCalendar.DayNamesOrder}"
+            NavigatedDate="{Binding MyCalendar.NavigatedDate}"/>
+
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </StackLayout>
+
+
+</ContentPage>
