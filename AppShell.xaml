@@ -7,17 +7,13 @@
     xmlns:view="clr-namespace:Stallapp.View">
 
     <TabBar>
-        <Tab>
-            <ShellContent
-            Title="Avviseringar"
-            ContentTemplate="{DataTemplate view:MainPage}"
-            Icon="house_solid.svg"/>
+        <Tab Title="Avviseringar" Icon="house_solid.svg">
+            <ShellContent            
+            ContentTemplate="{DataTemplate view:MainPage}"/>
         </Tab>
-        <Tab>
-            <ShellContent
-            Title="Kalender"
-            ContentTemplate="{DataTemplate view:CalendarPage}"
-            Icon="calendar_days_solid.svg"/>
+        <Tab Title="Kalender" Icon="calendar_days_solid.svg">
+            <ShellContent            
+            ContentTemplate="{DataTemplate view:CalendarPage}"/>
             <ShellContent
             Title="Poäng"/>
         </Tab>
