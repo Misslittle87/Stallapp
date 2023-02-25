@@ -7,26 +7,27 @@
     xmlns:view="clr-namespace:Stallapp.View">
 
     <TabBar>
-        <ShellContent
-            Title="Hem"
+        <Tab>
+            <ShellContent
+            Title="Avviseringar"
             ContentTemplate="{DataTemplate view:MainPage}"
-            Icon="house_solid.svg"
-        />
-        
-        <ShellContent
-            Title="Calendar"
+            Icon="house_solid.svg"/>
+        </Tab>
+        <Tab>
+            <ShellContent
+            Title="Kalender"
             ContentTemplate="{DataTemplate view:CalendarPage}"
-            Icon="calendar_days_solid.svg"
-        />
-
-        <ShellContent
-            Title="Person"
-            ContentTemplate="{DataTemplate view:LoginPage}"
-            Icon="person_solid.svg"
-        />
+            Icon="calendar_days_solid.svg"/>
+            <ShellContent
+            Title="Poäng"/>
+        </Tab>
+        <Tab Title="Personer" Icon="person_solid.svg">
+            <ShellContent
+                Title="Person"
+                ContentTemplate="{DataTemplate view:PersonPage}"/>
+            <ShellContent
+                Title="Häst"
+                ContentTemplate="{DataTemplate view:HorsePage}"/>
+        </Tab>
     </TabBar>
-    
-    <FlyoutItem Title="Settings">
-        <ShellContent ContentTemplate="{DataTemplate view:SettingsPage}" />
-    </FlyoutItem>
 </Shell>
