@@ -2,15 +2,26 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Stallapp.View.LoginPage"
-             Title="LoginPage">
-    <Grid Padding="10">
-        <Frame Style="{StaticResource Card}">
+             Title="Stallapp">
+    <Grid ColumnDefinitions="*,*"
+          ColumnSpacing="5"
+          RowDefinitions="*,Auto"
+          RowSpacing="0">
+        
+        <Frame BorderColor="{StaticResource Primary}"
+               Grid.ColumnSpan="2"
+               CornerRadius="40"
+               Margin="50">
+            
             <StackLayout>
-                <Label Text="Användarnamn:" Style="{StaticResource BaseLabel}"/>
-                <Entry Placeholder="Username"/>
-                <Label Text="Lösenord:"></Label>
-                <Entry IsPassword="True" Placeholder="Password"></Entry>
-                <Button Text="Logga in"></Button>
+                <Image Source="horse_head_solid.svg" HeightRequest="100" Margin="30" />
+                <Label Text="Användarnamn:" Margin="5"/>
+                <Entry Placeholder="Username" Margin="5"/>
+                <Label Text="Lösenord:" Margin="5"/>
+                <Entry IsPassword="True" Placeholder="Password" Margin="5"/>
+                <Button Text="Logga in" Margin="5"/>
+                <Button Text="Registrera" Margin="5"/>
+                <Label Text="Glömt lösenord?" Margin="5"/>
             </StackLayout>
         </Frame>
     </Grid>

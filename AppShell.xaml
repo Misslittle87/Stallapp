@@ -25,8 +25,8 @@
             Icon="person_solid.svg"
         />
     </TabBar>
+    
     <FlyoutItem Title="Settings">
-        <Tab Title="Settings"></Tab>
-        <ShellContent ContentTemplate="{DataTemplate view:SettingsPage}" Route="SettingsPage" />
+        <ShellContent ContentTemplate="{DataTemplate view:SettingsPage}" />
     </FlyoutItem>
 </Shell>

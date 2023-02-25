@@ -59,8 +59,7 @@
             <!-- Lable styles -->
             <Style x:Key="BaseLabel" TargetType="Label">
                 <Setter Property="TextColor" 
-                        Value="{AppThemeBinding Dark={StaticResource TextColorDark},
-                    Light={StaticResource TextColor}}" />
+                        Value="Black" />
             </Style>
             
             <!-- Button style -->
@@ -68,9 +67,8 @@
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
                 <Setter Property="BorderColor" Value="Black"/>
-                <Setter Property="WidthRequest" Value="50"/>
-                <Setter Property="HeightRequest" Value="25"/>
                 <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
             </Style>
             <Style x:Key="BButton" TargetType="Button"
                    BasedOn="{StaticResource Button}">
@@ -83,8 +81,13 @@
                         Value="True"/>
                 <Setter Property="CornerRadius" Value="20"/>
                 <Setter Property="BackgroundColor"
-                        Value="{AppThemeBinding Dark={StaticResource FrameBackgroundDark},
-                    Light={StaticResource FrameBackground}}"/>
+                        Value="White"/>
+            </Style>
+            
+            <!-- Stacklayout -->
+            <Style x:Key="Stacklayout" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>
