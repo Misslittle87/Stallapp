@@ -2,16 +2,25 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Stallapp.View.Contact"
+             xmlns:model="clr-namespace:Stallapp.Model"
              Title="Contact">
-    <Grid ColumnDefinitions="*,*"
-          ColumnSpacing="5"
-          RowSpacing="0"
-          RowDefinitions="*, Auto"
-          Padding="10">
-        <VerticalStackLayout>
-            <Label></Label>
-            <Button Text="Lägg till kontakt"
-                    Style="{StaticResource Button}"></Button>
-        </VerticalStackLayout>
-    </Grid>
+    <CollectionView>
+        <CollectionView.ItemsSource>
+            <x:Array Type="{x:Type model:ContaktModel}">
+                <model:ContactModel
+                ContactFirstName="Sofia"
+                Email="sofia@stallapp.com"/>
+            </x:Array>
+        </CollectionView.ItemsSource>
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="model:ContactModel">
+                    <HorizontalStackLayout>
+                        <VerticalStackLayout>
+                            <Label Text="{Binding ContactFirstName}" FontSize="20"/>
+                            <Label Text="{Binding Email}" FontSize="20"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
 </ContentPage>

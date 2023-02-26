@@ -17,7 +17,7 @@
             <ShellContent
             Title="Poäng"/>
         </Tab>
-        <Tab Title="Personer" Icon="person_solid.svg">
+        <Tab Title="Personer" Icon="people.svg">
             <ShellContent
                 Title="Person"
                 ContentTemplate="{DataTemplate view:PersonPage}"/>

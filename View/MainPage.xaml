@@ -6,7 +6,7 @@
              x:DataType="viewModel:MainViewModel"
              x:Class="Stallapp.View.MainPage"
              Title="Avviseringar">
-    <Grid ColumnDefinitions="*,Auto,Auto"
+    <Grid ColumnDefinitions="*"
           RowSpacing="10"
           RowDefinitions="Auto,Auto"
           Padding="10">

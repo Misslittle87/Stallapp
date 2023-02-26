@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stallapp.View.HorseDetailPage"
+             xmlns:model="clr-namespace:Stallapp.Model"
+             Title="HorseDetailPage">
+    <Grid>
+        <CollectionView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:HorseModel">
+                    <VerticalStackLayout>
+                        <Label Text="{Binding Name}"/>
+                        <Label Text="{Binding Age}"/>
+                        <Label Text="{Binding Breed}"/>
+                        <Label Text="{Binding Dicipline}"/>
+                        <Label Text="{Binding Owner}"/>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Kontakter"></Button>
+    </Grid>
+</ContentPage>
