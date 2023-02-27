@@ -5,7 +5,7 @@
              xmlns:model="clr-namespace:Stallapp.Model"
              x:DataType="viewModel:MainViewModel"
              x:Class="Stallapp.View.MainPage"
-             Title="Avviseringar">
+             Title="Main">
     <Grid ColumnDefinitions="*"
           RowSpacing="10"
           RowDefinitions="Auto,Auto"

@@ -1,9 +1,12 @@
+using Stallapp.ViewModel;
+
 namespace Stallapp.View;
 
 public partial class PersonDetailPage : ContentPage
 {
-	public PersonDetailPage()
+	public PersonDetailPage(PersonDetailViewModel vm)
 	{
 		InitializeComponent();
+		BindingContext = vm;
 	}
 }

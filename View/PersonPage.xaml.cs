@@ -1,3 +1,5 @@
+using Stallapp.ViewModel;
+
 namespace Stallapp.View;
 
 public partial class PersonPage : ContentPage
@@ -5,5 +7,6 @@ public partial class PersonPage : ContentPage
 	public PersonPage()
 	{
 		InitializeComponent();
+		
 	}
 }

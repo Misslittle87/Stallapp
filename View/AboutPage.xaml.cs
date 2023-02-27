@@ -2,9 +2,9 @@ using Stallapp.ViewModel;
 
 namespace Stallapp.View;
 
-public partial class HorseDetailPage : ContentPage
+public partial class AboutPage : ContentPage
 {
-	public HorseDetailPage(HorseDetailViewModel vm)
+	public AboutPage(AboutViewModel vm)
 	{
 		InitializeComponent();
 		BindingContext = vm;

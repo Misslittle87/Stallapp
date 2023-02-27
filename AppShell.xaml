@@ -4,7 +4,9 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Stallapp"
-    xmlns:view="clr-namespace:Stallapp.View">
+    xmlns:view="clr-namespace:Stallapp.View"
+    Shell.FlyoutBehavior="Flyout">
+
 
     <TabBar>
         <Tab Title="Avviseringar" Icon="house_solid.svg">
@@ -26,4 +28,19 @@
                 ContentTemplate="{DataTemplate view:HorsePage}"/>
         </Tab>
     </TabBar>
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+            Title="Inställning"
+            ContentTemplate="{DataTemplate view:SettingsPage}"
+            Icon="gear_solid.scg"/>
+
+    <ShellContent
+            Title="Om"/>
+
+    <ShellContent
+            Title="Logga in"
+            ContentTemplate="{DataTemplate view:LoginPage}"
+            Icon="log_in.svg"/>
+    </FlyoutItem>
+
 </Shell>

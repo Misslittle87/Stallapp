@@ -20,8 +20,8 @@ public static class MauiProgram
         builder.Services.AddSingleton<PersonPage>();
         builder.Services.AddSingleton<DetailPage>();
 
-        builder.Services.AddTransient<MainViewModel>();
-        builder.Services.AddTransient<CalendarViewModel>();
+        builder.Services.AddSingleton<MainViewModel>();
+        builder.Services.AddSingleton<CalendarViewModel>();
 
 
 

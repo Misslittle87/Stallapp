@@ -4,38 +4,46 @@
              x:Class="Stallapp.View.PersonPage"
              xmlns:model="clr-namespace:Stallapp.Model"
              Title="Personer">
-    <CollectionView>
-        <CollectionView.ItemsSource>
-            <x:Array Type="{x:Type model:PersonModel}">
-                <model:PersonModel
-                FirstName="Sofia"
-                Image="profile_black.svg"
-                Email="sofia@stallapp.com"/>
-                <model:PersonModel
-                FirstName="Gustav"
-                Image="profile_black.svg"
-                Email="gustav@stallapp.com"/>
-                <model:PersonModel
-                FirstName="Frida"
-                Image="profile_black.svg"
-                Email="frida@stallapp.com"/>
-            </x:Array>
-        </CollectionView.ItemsSource>
-        <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="model:PersonModel">
-                <Frame>
-                    <HorizontalStackLayout>
-                        <Image Source="profile_black.svg"
-                               HeightRequest="100"
-                               WidthRequest="100"
-                               Aspect="AspectFill"/>
-                        <VerticalStackLayout>
-                            <Label Text="{Binding FirstName}" FontSize="20"/>
-                            <Label Text="{Binding Email}" FontSize="20"/>
-                        </VerticalStackLayout>
-                    </HorizontalStackLayout>
-                </Frame>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+    <Grid ColumnDefinitions="*,*"
+          ColumnSpacing="5"
+          RowDefinitions="*,auto">
+        <CollectionView Grid.ColumnSpan="2">
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type model:PersonModel}">
+                    <model:PersonModel
+                    FirstName="Sofia"
+                    Image="profile_black.svg"
+                    Email="sofia@stallapp.com"/>
+                    <model:PersonModel
+                    FirstName="Gustav"
+                    Image="profile_black.svg"
+                    Email="gustav@stallapp.com"/>
+                    <model:PersonModel
+                    FirstName="Frida"
+                    Image="profile_black.svg"
+                    Email="frida@stallapp.com"/>
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:PersonModel">
+                    <Grid Padding="10">
+                        <Frame HeightRequest="125">
+                            <Grid>
+                                <HorizontalStackLayout>
+                                    <Image Source="profile_black.svg"
+                                   HeightRequest="100"
+                                   WidthRequest="100"
+                                   Aspect="AspectFill"/>
+                                    <VerticalStackLayout>
+                                        <Label Text="{Binding FirstName}" FontSize="20"/>
+                                        <Label Text="{Binding Email}" FontSize="20"/>
+                                    </VerticalStackLayout>
+                                </HorizontalStackLayout>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 </ContentPage>
