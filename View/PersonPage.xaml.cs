@@ -4,9 +4,9 @@ namespace Stallapp.View;
 
 public partial class PersonPage : ContentPage
 {
-	public PersonPage()
+	public PersonPage(PersonViewModel vm)
 	{
 		InitializeComponent();
-		
+		BindingContext = vm;
 	}
 }

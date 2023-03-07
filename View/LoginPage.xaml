@@ -21,8 +21,12 @@
                 <Entry Placeholder="Username" Margin="5"/>
                 <Label Text="Lösenord:" Margin="5"/>
                 <Entry IsPassword="True" Placeholder="Password" Margin="5"/>
-                <Button Text="Logga in" Margin="5"/>
-                <Button Text="Registrera" Margin="5"/>
+                <Button Text="Logga in" 
+                        Margin="5"
+                        Style="{StaticResource Button}"/>
+                <Button Text="Registrera" 
+                        Margin="5"
+                        Style="{StaticResource Button}"/>
                 <Label Text="Glömt lösenord?" Margin="5"/>
             </StackLayout>
         </Frame>

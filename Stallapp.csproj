@@ -49,8 +49,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Maui" Version="4.0.0" />
-		<PackageReference Include="CommunityToolkit.Maui.Core" Version="4.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="5.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui.Core" Version="5.0.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="XCalendar.Core" Version="4.4.0" />

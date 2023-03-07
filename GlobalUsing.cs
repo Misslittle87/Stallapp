@@ -5,5 +5,5 @@ global using System.Text;
 global using System.Threading.Tasks;
 global using CommunityToolkit.Mvvm.ComponentModel;
 global using ObservableObject = CommunityToolkit.Mvvm.ComponentModel.ObservableObject;
-
+global using CommunityToolkit.Mvvm.Input;
 

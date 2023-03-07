@@ -13,6 +13,8 @@
             <Color x:Key="WindowBackgroundColor">#f2f2f7</Color>
             <Color x:Key="WindowBackgroundColorDark">Black</Color>
 
+            <Color x:Key="Transparent">Transparent</Color>
+
             <Color x:Key="SystemBlue">#007AFF</Color>
             <Color x:Key="SystemGreen">#34C759</Color>
             <Color x:Key="SystemIndigo">#5856D6</Color>
@@ -58,15 +60,14 @@
             
             <!-- Lable styles -->
             <Style x:Key="BaseLabel" TargetType="Label">
-                <Setter Property="TextColor" 
-                        Value="Black" />
+                <Setter Property="TextColor" Value="Black" />
             </Style>
             
             <!-- Button style -->
             <Style x:Key="Button" TargetType="Button">
-                <Setter Property="TextColor" Value="Black"/>
-                <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
-                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="TextColor" Value="{StaticResource Primary}"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource FrameBackground}"/>
+                <Setter Property="BorderColor" Value="{StaticResource Primary}"/>
                 <Setter Property="CornerRadius" Value="10"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
             </Style>
@@ -76,17 +77,17 @@
             </Style>
             
             <!-- Frames style -->
-            <Style x:Key="Frame" TargetType="Frame">
-                <Setter Property="HasShadow" 
-                        Value="True"/>
+            <Style x:Key="FrameView" TargetType="Frame">
+                <Setter Property="BorderColor" Value="{StaticResource Primary}"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource FrameBackground}"/>
+                <Setter Property="HasShadow" Value="True"/>
                 <Setter Property="CornerRadius" Value="20"/>
-                <Setter Property="BackgroundColor"
-                        Value="White"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource FrameBackground}"/>
             </Style>
             
             <!-- Stacklayout -->
             <Style x:Key="Stacklayout" TargetType="StackLayout">
-                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource Transparent}"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
             </Style>
         </ResourceDictionary>

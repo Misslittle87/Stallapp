@@ -9,4 +9,8 @@ public partial class HorseDetailPage : ContentPage
 		InitializeComponent();
 		BindingContext = vm;
 	}
+    protected override void OnNavigatedTo(NavigatedToEventArgs args)
+    {
+        base.OnNavigatedTo(args);
+    }
 }

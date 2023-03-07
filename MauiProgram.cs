@@ -18,10 +18,17 @@ public static class MauiProgram
         builder.Services.AddSingleton<MainPage>();
         builder.Services.AddSingleton<CalendarPage>();
         builder.Services.AddSingleton<PersonPage>();
+        builder.Services.AddTransient<PersonDetailPage>();
         builder.Services.AddSingleton<DetailPage>();
+        builder.Services.AddSingleton<HorsePage>();
+        builder.Services.AddTransient<HorseDetailPage>();
 
         builder.Services.AddSingleton<MainViewModel>();
         builder.Services.AddSingleton<CalendarViewModel>();
+        builder.Services.AddSingleton<PersonViewModel>();
+        builder.Services.AddTransient<PersonDetailViewModel>();
+        builder.Services.AddSingleton<HorseViewModel>();
+        builder.Services.AddTransient<HorseDetailViewModel>();
 
 
 

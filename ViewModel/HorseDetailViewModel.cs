@@ -1,7 +1,21 @@
-﻿
+﻿using Stallapp.Model;
+
 namespace Stallapp.ViewModel
 {
-    public class HorseDetailViewModel
+    [QueryProperty(nameof(HorseModel), nameof(HorseModel))]
+    public partial class HorseDetailViewModel : BaseViewModel
     {
+        public HorseDetailViewModel()
+        {
+        }
+
+        [ObservableProperty]
+        HorseModel horse;
+
+        [RelayCommand]
+        async Task GoBackAsync()
+        {
+            await Shell.Current.GoToAsync("..");
+        }
     }
 }

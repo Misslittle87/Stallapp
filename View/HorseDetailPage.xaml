@@ -3,8 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Stallapp.View.HorseDetailPage"
              xmlns:model="clr-namespace:Stallapp.Model"
-             Title="HorseDetailPage">
-    <Grid>
+             xmlns:viewmodel="clr-namespace:Stallapp.ViewModel"
+             x:DataType="viewmodel:HorseDetailViewModel"
+             Title="{Binding Horse.Name}">
+    
+    <Grid ColumnDefinitions="*, auto, *"
+          RowDefinitions="160, auto">
+        <BoxView BackgroundColor="{StaticResource Primary}"
+                 Grid.ColumnSpan="3"
+                 HeightRequest="160"
+                 HorizontalOptions="FillAndExpand"/>
+        <Frame Grid.RowSpan="2"
+               Grid.Column="1"
+               HeightRequest="160"
+               WidthRequest="160"
+               CornerRadius="80"
+               HorizontalOptions="Center"
+               IsClippedToBounds="True"
+               Padding="0"
+               Margin="0,80,0,0">
+            <Image Aspect="AspectFill"
+                   HeightRequest="160"
+                   WidthRequest="160"
+                   HorizontalOptions="Center"
+                   Source="horse_head_solid.svg"/>
+        </Frame>
         <CollectionView>
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:HorseModel">

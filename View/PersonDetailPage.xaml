@@ -3,8 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Stallapp.View.PersonDetailPage"             
              xmlns:model="clr-namespace:Stallapp.Model"
-             Title="PersonDetailPage">
-    <Grid>
+             xmlns:viewmodel="clr-namespace:Stallapp.ViewModel"
+             x:DataType="viewmodel:PersonDetailViewModel"
+             Title="{Binding Person.FirstName}">
+    <Grid ColumnDefinitions="*, auto, *"
+          RowDefinitions="160, auto">
+        <BoxView BackgroundColor="{StaticResource Primary}"
+                 Grid.ColumnSpan="3"
+                 HeightRequest="160"
+                 HorizontalOptions="FillAndExpand"/>
+        <Frame Grid.RowSpan="2"
+               Grid.Column="1"
+               HeightRequest="160"
+               WidthRequest="160"
+               CornerRadius="80"
+               HorizontalOptions="Center"
+               IsClippedToBounds="True"
+               Padding="0"
+               Margin="0,80,0,0">
+            <Image Aspect="AspectFill"
+                   HeightRequest="160"
+                   WidthRequest="160"
+                   HorizontalOptions="Center"
+                   Source="profile_black.svg"/>
+        </Frame>
         <CollectionView>
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:PersonModel">

@@ -11,7 +11,8 @@
     <TabBar>
         <Tab Title="Avviseringar" Icon="house_solid.svg">
             <ShellContent            
-            ContentTemplate="{DataTemplate view:MainPage}"/>
+            ContentTemplate="{DataTemplate view:MainPage}"
+                Route="MainPage"/>
         </Tab>
         <Tab Title="Kalender" Icon="calendar_days_solid.svg">
             <ShellContent            
@@ -35,7 +36,8 @@
             Icon="gear_solid.scg"/>
 
     <ShellContent
-            Title="Om"/>
+            Title="Om"
+            ContentTemplate="{DataTemplate view:AboutPage}"/>
 
     <ShellContent
             Title="Logga in"

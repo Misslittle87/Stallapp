@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Stallapp.View.HorsePage"
              xmlns:model="clr-namespace:Stallapp.Model"
-             Title="Hästar">
+             xmlns:viewmodel="clr-namespace:Stallapp.ViewModel"
+             x:DataType="viewmodel:HorseViewModel"
+             Title="{Binding Title}">
     <CollectionView>
         <CollectionView.ItemsSource>
             <x:Array Type="{x:Type model:HorseModel}">

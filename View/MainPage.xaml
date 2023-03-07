@@ -15,22 +15,22 @@
                                        Grid.Row="0" 
                                        HorizontalOptions="EndAndExpand" 
                                        VerticalOptions="Start">
-                <VerticalStackLayout VerticalOptions="Center">
-                    <Label Text="{Binding CurrentDate,StringFormat='{0:dddd}'}"/>
-                    <Label Text="{Binding CurrentDate,StringFormat='{0:MMM yyyy}'}" />
-                </VerticalStackLayout>
-                <DatePicker Date="{Binding CurrentDate}" 
+                    <VerticalStackLayout VerticalOptions="Center">
+                        <Label Text="{Binding CurrentDate,StringFormat='{0:dddd}'}"/>
+                        <Label Text="{Binding CurrentDate,StringFormat='{0:MMM yyyy}'}" />
+                    </VerticalStackLayout>
+                    <DatePicker Date="{Binding CurrentDate}" 
                             FontAttributes="Bold" 
                             FontSize="45" 
                             Format="dd"/>
-            </HorizontalStackLayout>
-        <VerticalStackLayout Grid.Column="1"
-                   Grid.Row="2"
-                   HorizontalOptions="Center">
-            <Label Text="Välkommen, Sofia"
-                   FontSize="20"
-                   />
-        <Label Text="Du har inga avviseringar idag!" Margin="5"/>
+                </HorizontalStackLayout>
+                    <VerticalStackLayout Grid.Column="1"
+                               Grid.Row="2"
+                               HorizontalOptions="Center">
+                        <Label Text="Välkommen, Sofia"
+                               FontSize="20"
+                               />
+                        <Label Text="Du har inga avviseringar idag!" Margin="5"/>
         </VerticalStackLayout>
     </Grid>
     
