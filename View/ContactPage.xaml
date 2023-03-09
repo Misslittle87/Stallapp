@@ -4,10 +4,10 @@
              x:Class="Stallapp.View.ContactPage"
              xmlns:model="clr-namespace:Stallapp.Model"
              xmlns:viewmodel="clr-namespace:Stallapp.ViewModel"
+             x:DataType="viewmodel:ContactViewModel"
              Title="ContactPage">
+    
     <Grid RowDefinitions="*,auto">
-        <CollectionView>
-             
-        </CollectionView>
+        <Button Text="Lägg till en kontakt"></Button>
     </Grid>
 </ContentPage>

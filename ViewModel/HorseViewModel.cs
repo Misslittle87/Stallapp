@@ -9,7 +9,7 @@ namespace Stallapp.ViewModel
         public ObservableCollection<HorseModel> Horse { get; } = new ObservableCollection<HorseModel>();
         public HorseViewModel()
         {
-            Title = "Häst";
+
         }
         [RelayCommand]
         async Task GoToDetailAsync(HorseModel horseModel)

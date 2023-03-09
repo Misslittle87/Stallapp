@@ -9,4 +9,5 @@ public partial class CalendarPage : ContentPage
 		InitializeComponent();
 		BindingContext = new CalendarViewModel();
 	}
+
 }

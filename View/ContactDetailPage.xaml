@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stallapp.View.ContactDetailPage"
+             xmlns:model="clr-namespace:Stallapp.Model"
+             xmlns:viewmodel="clr-namespace:Stallapp.ViewModel"
+             x:DataType="viewmodel:ContactDetailViewModel"
+             Title="ContactDetailPage">
+    <!-- Column ner
+        Row sidan-->
+    <Grid Padding="20"
+          RowSpacing="10">
+        <VerticalStackLayout>
+            <Label Text="Sofias kontakter"
+                   HorizontalOptions="Center"
+                   FontSize="30"/>
+            <Entry Placeholder="Yrke"
+                   WidthRequest="250"/>
+            <Button Text="Lägg till kontakt"
+                    Margin="30"
+                    WidthRequest="150"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

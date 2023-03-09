@@ -7,16 +7,18 @@
     xmlns:view="clr-namespace:Stallapp.View"
     Shell.FlyoutBehavior="Flyout">
 
+    <ShellItem Route="LoginPage">
+        <ShellContent ContentTemplate="{DataTemplate view:LoginPage}"/>
+    </ShellItem>
 
     <TabBar>
         <Tab Title="Avviseringar" Icon="house_solid.svg">
             <ShellContent            
-            ContentTemplate="{DataTemplate view:MainPage}"
-                Route="MainPage"/>
+            ContentTemplate="{DataTemplate view:MainPage}" Route="MainPage"/>
         </Tab>
         <Tab Title="Kalender" Icon="calendar_days_solid.svg">
             <ShellContent            
-            ContentTemplate="{DataTemplate view:CalendarPage}"/>
+            ContentTemplate="{DataTemplate view:CalendarPage}" Route="CalendarPage"/>
             <ShellContent
             Title="Poäng"/>
         </Tab>
@@ -29,20 +31,21 @@
                 ContentTemplate="{DataTemplate view:HorsePage}"/>
         </Tab>
     </TabBar>
+
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent
             Title="Inställning"
             ContentTemplate="{DataTemplate view:SettingsPage}"
             Icon="gear_solid.scg"/>
 
-    <ShellContent
+        <ShellContent
             Title="Om"
             ContentTemplate="{DataTemplate view:AboutPage}"/>
 
-    <ShellContent
-            Title="Logga in"
-            ContentTemplate="{DataTemplate view:LoginPage}"
-            Icon="log_in.svg"/>
+        <ShellContent Icon="log_out.svg"
+                      ContentTemplate="{DataTemplate view:LoginPage}"
+                      Title="Logga ut">
+        </ShellContent>
     </FlyoutItem>
 
 </Shell>

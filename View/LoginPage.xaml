@@ -2,33 +2,32 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Stallapp.View.LoginPage"
-             Title="Stallapp"
              Shell.FlyoutBehavior="Disabled"
-             Shell.NavBarIsVisible="False">
-    <Grid ColumnDefinitions="*,*"
-          ColumnSpacing="5"
-          RowDefinitions="*,Auto"
-          RowSpacing="0">
-        
+             Shell.NavBarIsVisible="False"
+             Title="Stallapp">
+
+    <Grid Padding="50">
         <Frame BorderColor="{StaticResource Primary}"
-               Grid.ColumnSpan="2"
-               CornerRadius="40"
-               Margin="50">
-            
-            <StackLayout>
-                <Image Source="horse_head_solid.svg" HeightRequest="100" Margin="30" />
-                <Label Text="Användarnamn:" Margin="5"/>
-                <Entry Placeholder="Username" Margin="5"/>
-                <Label Text="Lösenord:" Margin="5"/>
-                <Entry IsPassword="True" Placeholder="Password" Margin="5"/>
-                <Button Text="Logga in" 
-                        Margin="5"
-                        Style="{StaticResource Button}"/>
-                <Button Text="Registrera" 
-                        Margin="5"
-                        Style="{StaticResource Button}"/>
-                <Label Text="Glömt lösenord?" Margin="5"/>
-            </StackLayout>
+               CornerRadius="40">
+            <Grid RowDefinitions="*,*,*">
+                <Image Source="horse_head_solid.svg" 
+                           HeightRequest="100" 
+                           Margin="30" 
+                           Grid.Row="0"/>
+                <VerticalStackLayout Grid.Row="1">
+                    <Label Text="Användarnamn:" Margin="5"/>
+                    <Entry Placeholder="Username" Margin="5"/>
+                    <Label Text="Lösenord:" Margin="5"/>
+                    <Entry IsPassword="True" Placeholder="Password" Margin="5"/>
+                    <Button Text="Login" Clicked="Button_Clicked"/>
+                    <Label Text="Register">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Text="Glömt lösenord?" Margin="5"/>
+                </VerticalStackLayout>
+            </Grid>
         </Frame>
-    </Grid>
+    </Grid> 
 </ContentPage>

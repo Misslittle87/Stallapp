@@ -6,8 +6,9 @@
              xmlns:viewmodel="clr-namespace:Stallapp.ViewModel"
              x:DataType="viewmodel:PersonDetailViewModel"
              Title="{Binding Person.FirstName}">
-    <Grid ColumnDefinitions="*, auto, *"
-          RowDefinitions="160, auto">
+    
+    <Grid ColumnDefinitions="*,*,*"
+          RowDefinitions="160, auto,*">
         <BoxView BackgroundColor="{StaticResource Primary}"
                  Grid.ColumnSpan="3"
                  HeightRequest="160"
@@ -39,6 +40,9 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Button Text="Kontakter"></Button>
+        <Button Text="Kontakter"                
+                HeightRequest="40"
+                Grid.Row="3"
+                Grid.Column="1"></Button>
     </Grid>
 </ContentPage>

@@ -5,7 +5,6 @@
         public BaseViewModel()
         {            
         }
-
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(IsNotBusy))]
         bool isBusy;

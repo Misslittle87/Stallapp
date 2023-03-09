@@ -3,21 +3,140 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Stallapp.View.CalendarPage"
              xmlns:xc="clr-namespace:XCalendar.Maui.Views;assembly=XCalendar.Maui"
+             xmlns:xcModels="clr-namespace:XCalendar.Core.Models;assembly=XCalendar.Core"
+             xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:viewmodel="clr-namespace:Stallapp.ViewModel"
              x:DataType="viewmodel:CalendarViewModel"
              Title="Kalender">
 
-    <StackLayout>
+
+
+    <VerticalStackLayout Padding="10">
         <xc:CalendarView
+            BackgroundColor="{StaticResource Primary}"
+            BackwardsArrowCommand="{Binding NavigateCalendarCommand}"
             Days="{Binding MyCalendar.Days}"
             DaysOfWeek="{Binding MyCalendar.DayNamesOrder}"
-            NavigatedDate="{Binding MyCalendar.NavigatedDate}"/>
+            ForwardsArrowCommand="{Binding NavigateCalendarCommand}"
+            NavigatedDate="{Binding MyCalendar.NavigatedDate}"
+            Style="{StaticResource DefaultCalendarViewStyle}">
 
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </StackLayout>
+            <xc:CalendarView.ForwardsArrowCommandParameter>
+                <x:Int32>1</x:Int32>
+            </xc:CalendarView.ForwardsArrowCommandParameter>
+
+            <xc:CalendarView.BackwardsArrowCommandParameter>
+                <x:Int32>-1</x:Int32>
+            </xc:CalendarView.BackwardsArrowCommandParameter>
+
+            <xc:CalendarView.NavigationViewTemplate>
+                <ControlTemplate>
+                    <xc:NavigationView
+                            BackwardsArrowCommand="{Binding BackwardsArrowCommand, Source={RelativeSource TemplatedParent}}"
+                            BackwardsArrowCommandParameter="{Binding BackwardsArrowCommandParameter, Source={RelativeSource TemplatedParent}}"
+                            ForwardsArrowCommand="{Binding ForwardsArrowCommand, Source={RelativeSource TemplatedParent}}"
+                            ForwardsArrowCommandParameter="{Binding ForwardsArrowCommandParameter, Source={RelativeSource TemplatedParent}}"
+                            Style="{StaticResource DefaultNavigationViewStyle}"
+                            Text="{Binding Text, Source={RelativeSource TemplatedParent}}"/>
+                </ControlTemplate>
+            </xc:CalendarView.NavigationViewTemplate>
+
+            <xc:CalendarView.DayTemplate>
+                <DataTemplate x:DataType="{x:Type xcModels:CalendarDay}">
+                    <!--  Inside the CalendarView  -->
+                    <Border Margin="2.5"
+                            BackgroundColor="Transparent"
+                            HeightRequest="45"
+                            WidthRequest="45">
+
+                        <Border.StrokeShape>
+                            <Ellipse/>
+                        </Border.StrokeShape>
+
+                        <xc:DayView
+                                CurrentMonthCommand="{Binding BindingContext.ChangeDateSelectionCommand, Source={x:Reference This}}"
+                                CurrentMonthCommandParameter="{Binding DateTime}"
+                                DateTime="{Binding DateTime}"
+                                HeightRequest="47"
+                                IsCurrentMonth="{Binding IsCurrentMonth}"
+                                IsInvalid="{Binding IsInvalid}"
+                                IsSelected="{Binding IsSelected}"
+                                IsToday="{Binding IsToday}"
+                                SelectedCommand="{Binding BindingContext.ChangeDateSelectionCommand, Source={x:Reference This}}"
+                                SelectedCommandParameter="{Binding DateTime}"
+                                Style="{StaticResource DefaultDayViewStyle}"
+                                TodayCommand="{Binding BindingContext.ChangeDateSelectionCommand, Source={x:Reference This}}"
+                                TodayCommandParameter="{Binding DateTime}"/>
+                    </Border>
+                </DataTemplate>
+            </xc:CalendarView.DayTemplate>
+        </xc:CalendarView>
+
+        <BoxView BackgroundColor="{StaticResource SeparatorColor}" HeightRequest="1"/>
+
+        <Grid Style="{StaticResource PropertyEditorContainer}">
+            <Label
+                    Grid.Column="0"
+                    FontSize="{StaticResource SmallFontSize}"
+                    HorizontalTextAlignment="Center"
+                    Text="SelectionType"
+                    VerticalTextAlignment="Center"/>
+            <Label
+                    Grid.Column="1"
+                    FontSize="{StaticResource SmallFontSize}"
+                    HorizontalTextAlignment="Center"
+                    Text="{Binding MyCalendar.SelectionType}"
+                    TextColor="{StaticResource TappableSettingTextColor}"
+                    VerticalTextAlignment="Center">
+
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ShowSelectionTypeDialogCommand}"/>
+                </Label.GestureRecognizers>
+
+            </Label>
+        </Grid>
+
+        <Grid Style="{StaticResource PropertyEditorContainer}">
+            <Label
+                    Grid.Column="0"
+                    FontSize="{StaticResource SmallFontSize}"
+                    HorizontalTextAlignment="Center"
+                    Text="SelectionAction"
+                    VerticalTextAlignment="Center"/>
+            <Label
+                    Grid.Column="1"
+                    FontSize="{StaticResource SmallFontSize}"
+                    HorizontalTextAlignment="Center"
+                    Text="{Binding Calendar.SelectionAction}"
+                    TextColor="{StaticResource TappableSettingTextColor}"
+                    VerticalTextAlignment="Center">
+
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ShowSelectionActionDialogCommand}"/>
+                </Label.GestureRecognizers>
+
+            </Label>
+        </Grid>
+
+        <BoxView BackgroundColor="{DynamicResource SeparatorColor}" HeightRequest="1"/>
+
+        <Grid ColumnDefinitions="*" Style="{StaticResource PropertyEditorContainer}">
+
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ShowCommonFunctionalityDialogCommand}"/>
+            </Grid.GestureRecognizers>
+
+            <Label
+                    Grid.Column="0"
+                    FontSize="{StaticResource SmallFontSize}"
+                    HorizontalTextAlignment="Center"
+                    Text="Set To A Common Function"
+                    TextColor="{StaticResource TappableSettingTextColor}"
+                    VerticalTextAlignment="Center"/>
+        </Grid>
+
+        <BoxView BackgroundColor="{DynamicResource SeparatorColor}" HeightRequest="1"/>
+    </VerticalStackLayout>
 
 
 </ContentPage>

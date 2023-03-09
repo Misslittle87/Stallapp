@@ -24,6 +24,8 @@
             <Color x:Key="SystemRed">#FF3B30</Color>
             <Color x:Key="SystemTeal">#5AC8FA</Color>
             <Color x:Key="SystemYellow">#FFCC00</Color>
+            <Color x:Key="SystemPeach">#E07272</Color>
+            <Color x:Key="SystemPinkPurple">#911B4E</Color>
 
             <Color x:Key="FrameBackground">White</Color>
             <Color x:Key="FrameBackgroundDark">#1C1C1E</Color>

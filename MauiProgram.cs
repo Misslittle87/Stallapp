@@ -9,11 +9,13 @@ public static class MauiProgram
     public static MauiApp CreateMauiApp()
     {
         var builder = MauiApp.CreateBuilder();
-        builder.UseMauiApp<App>().ConfigureFonts(fonts =>
+        builder.UseMauiApp<App>()
+            .UseMauiCommunityToolkit()
+            .ConfigureFonts(fonts =>
         {
             fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
             fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-        }).UseMauiCommunityToolkit();
+        });
 
         builder.Services.AddSingleton<MainPage>();
         builder.Services.AddSingleton<CalendarPage>();
@@ -21,7 +23,9 @@ public static class MauiProgram
         builder.Services.AddTransient<PersonDetailPage>();
         builder.Services.AddSingleton<DetailPage>();
         builder.Services.AddSingleton<HorsePage>();
+        builder.Services.AddSingleton<RegistrationPage>();
         builder.Services.AddTransient<HorseDetailPage>();
+ ;
 
         builder.Services.AddSingleton<MainViewModel>();
         builder.Services.AddSingleton<CalendarViewModel>();
@@ -29,6 +33,7 @@ public static class MauiProgram
         builder.Services.AddTransient<PersonDetailViewModel>();
         builder.Services.AddSingleton<HorseViewModel>();
         builder.Services.AddTransient<HorseDetailViewModel>();
+
 
 
 
