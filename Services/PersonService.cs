@@ -8,7 +8,7 @@ namespace Stallapp.Services
         static SQLiteAsyncConnection db;
         static async Task Init()
         {
-            if (db == null)
+            if (db != null)
             {
                 return;
             }

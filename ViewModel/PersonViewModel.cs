@@ -1,14 +1,13 @@
 ﻿using Stallapp.Model;
-using Stallapp.Services;
 using Stallapp.View;
-using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 
 namespace Stallapp.ViewModel;
 
 public partial class PersonViewModel : BaseViewModel
 {
-    public ObservableRangeCollection<PersonModel> Persons { get; set; }
+    [ObservableProperty]
+    public ObservableRangeCollection<PersonModel> persons;
+
     public PersonViewModel()
     {    
         Persons = new ObservableRangeCollection<PersonModel>();
@@ -16,26 +15,51 @@ public partial class PersonViewModel : BaseViewModel
     [RelayCommand]
     async Task Add()
     {
-        var firstName = await App.Current.MainPage.DisplayPromptAsync("Förnamn", "Förnamn1");
-        var lastName = await App.Current.MainPage.DisplayPromptAsync("Efternamn", "Efternamn1");
-        var email = await App.Current.MainPage.DisplayPromptAsync("Email", "Email1");
-        await PersonService.AddPerson(firstName, lastName, email);
-        await Refresh();
+        var firstName = await App.Current.MainPage.DisplayPromptAsync("Förnamn inhyrd", "Förnamn");
+        var lastName = await App.Current.MainPage.DisplayPromptAsync("Efternamn inhyrd", "Efternamn");
+        var email = await App.Current.MainPage.DisplayPromptAsync("Email inhyrd", "Email");
+        var person = new PersonModel
+        {
+            FirstName = firstName,
+            LastName = lastName,
+            Email = email
+        };
+        persons.Add(person);
+        
     }
     [RelayCommand]
-    async Task Remove(PersonModel person)
+    void Remove(PersonModel pm)
     {
-        await PersonService.RemovePerson(person.Id);
-        await Refresh();
+        if (persons.Contains(pm))
+        {
+            persons.Remove(pm);
+        }
     }
-    [RelayCommand]
-    async Task Refresh()
-    {  
-        await Task.Delay(2000);
-        Persons.Clear();
-        var persons = await PersonService.GetPerson();
-        Persons.AddRange(persons);
-    }
+    //async Task Add()
+    //{
+
+    //    var firstName = await App.Current.MainPage.DisplayPromptAsync("Förnamn inhyrd", "Förnamn");
+    //    var lastName = await App.Current.MainPage.DisplayPromptAsync("Efternamn inhyrd", "Efternamn");
+    //    var email = await App.Current.MainPage.DisplayPromptAsync("Email inhyrd", "Email");
+    //    //await PersonService.AddPerson(firstName, lastName, email);
+    //    //await Refresh();
+    //}
+    ////[RelayCommand]
+    //async Task Remove(PersonModel person)
+    //{
+    //    await PersonService.RemovePerson(person.Id);
+    //    await Refresh();
+    //}
+    //[RelayCommand]
+    //async Task Refresh()
+    //{  
+    //    IsBusy = true;
+    //    await Task.Delay(2000);
+    //    Persons.Clear();
+    //    var persons = await PersonService.GetPerson();
+    //    Persons.AddRange(persons);
+    //    IsBusy = false;
+    //}
     [RelayCommand]
     async Task GoToDetailAsync(PersonModel personModel)
     {

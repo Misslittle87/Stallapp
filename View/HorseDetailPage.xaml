@@ -7,7 +7,7 @@
              x:DataType="viewmodel:HorseDetailViewModel"
              Title="{Binding Horse.Name}">
     
-    <Grid ColumnDefinitions="*, auto, *"
+    <Grid ColumnDefinitions="*, *, *"
           RowDefinitions="160, auto">
         <BoxView BackgroundColor="{StaticResource Primary}"
                  Grid.ColumnSpan="3"
@@ -41,6 +41,9 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Button Text="Kontakter"></Button>
+        <Button Text="Kontakter"
+                HeightRequest="40"
+                Grid.Row="3"
+                Grid.Column="1"></Button>
     </Grid>
 </ContentPage>

@@ -3,17 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Stallapp.View.PersonPage"
              xmlns:model="clr-namespace:Stallapp.Model"
-             xmlns:viewmodel="clr-namespace:Stallapp.ViewModel"
+             xmlns:viewmodel="clr-namespace:Stallapp.ViewModel"             
              x:DataType="viewmodel:PersonViewModel"
-             Title="PersonPage">
+             Title="Personer">
     
     <Grid ColumnDefinitions="*,*,*"
           ColumnSpacing="5"
           RowDefinitions="*,auto">
-        <CollectionView Grid.ColumnSpan="3">
+        <CollectionView Grid.ColumnSpan="3"
+                        ItemsSource="{Binding Persons}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:PersonModel">
-                    <Grid Padding="10">
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Radera"
+                                           BackgroundColor="Red"
+                                           Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:PersonViewModel}}, Path=RemoveCommand}"
+                                           CommandParameter="{Binding .}"/>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                            <Grid Padding="10">
                         <Frame HeightRequest="125"
                                Style="{StaticResource FrameView}">
                             <Frame.GestureRecognizers>
@@ -29,12 +39,15 @@
                                     <VerticalStackLayout Grid.Column="1"
                                                          VerticalOptions="Center">
                                         <Label Text="{Binding FirstName}" FontSize="20"/>
+                                        <Label Text="{Binding LastName}"/>
                                         <Label Text="{Binding Email}" FontSize="10"/>
                                         <Label Text="{Binding Id}" FontSize="10"/>
                                     </VerticalStackLayout>
                             </Grid>
                         </Frame>
+                                
                     </Grid>
+                    </SwipeView>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

@@ -6,10 +6,33 @@ namespace Stallapp.ViewModel
 {
     public partial class HorseViewModel : BaseViewModel
     {
-        public ObservableCollection<HorseModel> Horse { get; } = new ObservableCollection<HorseModel>();
+        [ObservableProperty]
+        public ObservableRangeCollection<HorseModel> horses;
         public HorseViewModel()
         {
-
+            Horses = new ObservableRangeCollection<HorseModel>();
+        }
+        [RelayCommand]
+        async Task Add()
+        {
+            var name = await App.Current.MainPage.DisplayPromptAsync("Hästens namn", "namn");
+            var age = await App.Current.MainPage.DisplayPromptAsync("Hästens ålder", "ålder");
+            var breed = await App.Current.MainPage.DisplayPromptAsync("Hästens ras", "Ras");
+            var horse = new HorseModel 
+            {
+                Name = name,
+                Age = age,
+                Breed = breed
+            };
+            horses.Add(horse);
+        }
+        [RelayCommand]
+        void Remove(HorseModel hm) 
+        {
+            if (horses.Contains(hm))
+            {
+                horses.Remove(hm);
+            }
         }
         [RelayCommand]
         async Task GoToDetailAsync(HorseModel horseModel)
