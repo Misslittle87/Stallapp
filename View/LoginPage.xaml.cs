@@ -1,4 +1,4 @@
-
+// Detta är routen som appen tar när man klickar på logga in och logga ut.
 
 namespace Stallapp.View;
 

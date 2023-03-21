@@ -7,4 +7,7 @@ global using CommunityToolkit.Mvvm.ComponentModel;
 global using ObservableObject = CommunityToolkit.Mvvm.ComponentModel.ObservableObject;
 global using CommunityToolkit.Mvvm.Input;
 global using MvvmHelpers;
-// NugetPackages: XCalendar, MVVMCommunityToolkit, MvvmHelpers, SQLite
+global using Stallapp.Model;
+global using Stallapp.ViewModel;
+// NugetPackages: MVVMCommunityToolkit, MvvmHelpers, SQLite
+// Här har jag skapat en fil för global usings för att underlätta för mig själv och ha filerna så städade som möjligt

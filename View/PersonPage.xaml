@@ -7,6 +7,9 @@
              x:DataType="viewmodel:PersonViewModel"
              Title="Personer">
     
+    <!-- Detta är utseendet för personerna som är med i stallet, som sedan (genom backend) är kopplat till viewmodel 
+         Samma utseende som horsepage-->
+    
     <Grid ColumnDefinitions="*,*,*"
           ColumnSpacing="5"
           RowDefinitions="*,auto">

@@ -2,10 +2,20 @@
 
 namespace Stallapp.ViewModel
 {
-    public class LoginViewModel : BaseViewModel
+    public partial class LoginViewModel : BaseViewModel
     {
         public LoginViewModel()
         {
+        }
+        [ObservableProperty]
+        private string userNameEmail;
+        [ObservableProperty]
+        private string password;
+
+        [RelayCommand]
+        public async void Login()
+        {
+
         }
     }
 }

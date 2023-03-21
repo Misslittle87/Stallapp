@@ -1,14 +1,10 @@
-using Stallapp.ViewModel;
-
-
 namespace Stallapp.View;
 
 public partial class CalendarPage : ContentPage
 {
-	public CalendarPage()
+	public CalendarPage(CalendarViewModel vm)
 	{
 		InitializeComponent();
-		BindingContext = new CalendarViewModel();
-	}
-
+		BindingContext = vm;
+    }
 }

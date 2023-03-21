@@ -1,5 +1,7 @@
 ﻿using SQLite;
 
+
+
 namespace Stallapp.Model
 {
     public class PersonModel

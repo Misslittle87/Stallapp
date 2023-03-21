@@ -5,6 +5,8 @@
              Shell.FlyoutBehavior="Disabled"
              Shell.NavBarIsVisible="False"
              Title="Stallapp">
+    
+    <!-- Detta är utseendet på login -->
 
     <Grid Padding="50">
         <Frame BorderColor="{StaticResource Primary}"
@@ -15,10 +17,12 @@
                            Margin="30" 
                            Grid.Row="0"/>
                 <VerticalStackLayout Grid.Row="1">
-                    <Label Text="Användarnamn:" Margin="5"/>
-                    <Entry Placeholder="Username" Margin="5"/>
+                    <Label Text="Email:" Margin="5"/>
+                    <Entry Text="{Binding UserNameEmail}" Placeholder="Email" Margin="5"/>
                     <Label Text="Lösenord:" Margin="5"/>
-                    <Entry IsPassword="True" Placeholder="Password" Margin="5"/>
+                    <Entry Text="{Binding Password}" IsPassword="True" Placeholder="Lösenord" Margin="5"/>
+                    <CheckBox IsChecked="False"/>
+                    <Label Text="Kom ihåg mig"/>
                     <Button Text="Login" Clicked="Button_Clicked"/>
                     <Label Text="Register">
                         <Label.GestureRecognizers>

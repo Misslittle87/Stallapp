@@ -7,6 +7,8 @@
              x:DataType="viewmodel:PersonDetailViewModel"
              Title="{Binding Person.FirstName}">
     
+    <!-- Detta är en detaljerad sida för user/inhyrda, med en knapp att lägga till kontakter -->
+    
     <Grid ColumnDefinitions="*,*,*"
           RowDefinitions="160, auto,*">
         <BoxView BackgroundColor="{StaticResource Primary}"

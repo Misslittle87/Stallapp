@@ -6,6 +6,9 @@
              x:DataType="viewModel:MainViewModel"
              x:Class="Stallapp.View.MainPage"
              Title="Main">
+    
+    <!-- Detta är första sidan efter man har loggat in, där man ser datum och där man ska kunna se event från kalendern och vem som tex har hand som stallet idag -->
+    
     <Grid ColumnDefinitions="*"
           RowSpacing="10"
           RowDefinitions="Auto,Auto"
@@ -31,7 +34,7 @@
                                FontSize="20"
                                />
                         <Label Text="Du har inga avviseringar idag!" Margin="5"/>
-        </VerticalStackLayout>
+                    </VerticalStackLayout>
     </Grid>
     
 </ContentPage>

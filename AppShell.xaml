@@ -5,8 +5,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Stallapp"
     xmlns:view="clr-namespace:Stallapp.View"
-    Shell.FlyoutBehavior="Flyout">
+    Shell.FlyoutBehavior="Disabled">
 
+    <!-- Här är menyn med tab i botten på appen och flyout menyn som finns uppe till vänster i appen. 
+    Det är ett skal i appen-->
+    
     <ShellItem Route="LoginPage">
         <ShellContent ContentTemplate="{DataTemplate view:LoginPage}"/>
     </ShellItem>

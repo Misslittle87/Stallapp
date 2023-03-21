@@ -1,5 +1,7 @@
 ﻿using Stallapp.View;
 
+// Här registreras routes som inte har en tab eller en meny, så skriver jag routen sidan ska ta.
+
 namespace Stallapp;
 
 public partial class AppShell : Shell

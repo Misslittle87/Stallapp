@@ -1,6 +1,6 @@
 ﻿namespace Stallapp.Model
 {
-    class ContactModel
+    public class ContactModel
     {
         public string Worktitle { get; set; }
         public string Relative { get; set; }

@@ -6,7 +6,10 @@
              xmlns:viewmodel="clr-namespace:Stallapp.ViewModel"
              x:DataType="viewmodel:HorseDetailViewModel"
              Title="{Binding Horse.Name}">
-    
+
+    <!-- Detta är en detaljerad sida för hästar, med en knapp att lägga till kontakter.
+        Ska kopplas till rätt person med rätt kontakter -->
+
     <Grid ColumnDefinitions="*, *, *"
           RowDefinitions="160, auto">
         <BoxView BackgroundColor="{StaticResource Primary}"

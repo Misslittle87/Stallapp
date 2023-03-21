@@ -5,26 +5,24 @@ namespace Stallapp.ViewModel
 {
     public partial class ContactViewModel : BaseViewModel
     {
+        
+        public ObservableCollection<string> Contacts { get; set; }
         public ContactViewModel()
         {
             Contacts = new ObservableCollection<string>();
         }
-
-        [ObservableProperty]
-        ObservableCollection<string> contacts;
-
         [ObservableProperty]
         public string text;
 
         [RelayCommand]
         void Add()
         {
-            if(string.IsNullOrWhiteSpace(Text))
+            if(string.IsNullOrWhiteSpace(text))
             {
                 return;
             }
-            Contacts.Add(Text);
-            Text = string.Empty;
+            Contacts.Add(text);
+            text = string.Empty;
         }
     }
 }

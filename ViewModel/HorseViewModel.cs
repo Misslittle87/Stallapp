@@ -2,6 +2,8 @@
 using Stallapp.View;
 using System.Collections.ObjectModel;
 
+// Här kan user/inhyrd lägga till sin häst.
+
 namespace Stallapp.ViewModel
 {
     public partial class HorseViewModel : BaseViewModel
@@ -10,7 +12,7 @@ namespace Stallapp.ViewModel
         public ObservableRangeCollection<HorseModel> horses;
         public HorseViewModel()
         {
-            Horses = new ObservableRangeCollection<HorseModel>();
+            horses = new ObservableRangeCollection<HorseModel>();
         }
         [RelayCommand]
         async Task Add()

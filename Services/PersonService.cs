@@ -1,5 +1,7 @@
-﻿using SQLite;
+﻿using SQLite; // Nugetpackage
 using Stallapp.Model;
+
+// Databas ur funktion. Felsökning pågår. 
 
 namespace Stallapp.Services
 {

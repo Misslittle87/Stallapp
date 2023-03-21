@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Stallapp.ViewModel
+﻿namespace Stallapp.ViewModel
 {
+    // Här är tanken att man ska kunna ändra tema tex lightmode eller darkmode.
+
     public class SettingsViewModel
     {
     }

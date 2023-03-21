@@ -1,6 +1,9 @@
 ﻿using Stallapp.Model;
 using Stallapp.View;
 
+// Här är viewmodelen för att lägga till en person. Det är meningen att enbart admin/stallägaren ska se detta,
+// medans uder/inhyrd enbart ska kunna se vem som är med utan att redigera.
+
 namespace Stallapp.ViewModel;
 
 public partial class PersonViewModel : BaseViewModel
@@ -10,7 +13,7 @@ public partial class PersonViewModel : BaseViewModel
 
     public PersonViewModel()
     {    
-        Persons = new ObservableRangeCollection<PersonModel>();
+        persons = new ObservableRangeCollection<PersonModel>();
     }
     [RelayCommand]
     async Task Add()
