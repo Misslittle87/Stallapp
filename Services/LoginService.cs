@@ -34,12 +34,5 @@
             var user = await db.Table<UserInfoModel>().ToListAsync();
             return user;
         }
-        //public void ChangePassword(string oldpw, string newpw)
-        //{
-        //    if(oldpw == Password) 
-        //    {
-        //        Password = newpw;
-        //    }
-        //}
     }
 }
