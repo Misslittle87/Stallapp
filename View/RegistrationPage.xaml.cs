@@ -4,9 +4,9 @@ namespace Stallapp.View;
 
 public partial class RegistrationPage : ContentPage
 {
-	public RegistrationPage()
+	public RegistrationPage(RegistrationViewModel vm)
 	{
 		InitializeComponent();
-
+		BindingContext = vm;
 	}
 }

@@ -4,12 +4,11 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Stallapp"
-    xmlns:view="clr-namespace:Stallapp.View"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:view="clr-namespace:Stallapp.View">
 
     <!-- Här är menyn med tab i botten på appen och flyout menyn som finns uppe till vänster i appen. 
     Det är ett skal i appen-->
-    
+
     <ShellItem Route="LoginPage">
         <ShellContent ContentTemplate="{DataTemplate view:LoginPage}"/>
     </ShellItem>
@@ -25,7 +24,7 @@
             <ShellContent
             Title="Poäng"/>
         </Tab>
-        <Tab Title="Personer" Icon="people.svg">
+        <Tab Title="Stallet" Icon="people.svg">
             <ShellContent
                 Title="Person"
                 ContentTemplate="{DataTemplate view:PersonPage}"/>

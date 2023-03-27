@@ -43,8 +43,7 @@
                                                          VerticalOptions="Center">
                                         <Label Text="{Binding FirstName}" FontSize="20"/>
                                         <Label Text="{Binding LastName}"/>
-                                        <Label Text="{Binding Email}" FontSize="10"/>
-                                        <Label Text="{Binding Id}" FontSize="10"/>
+                                        <Label Text="{Binding Email}" FontSize="10"/>                                        
                                     </VerticalStackLayout>
                             </Grid>
                         </Frame>

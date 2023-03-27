@@ -25,6 +25,8 @@ public static class MauiProgram
         builder.Services.AddSingleton<HorsePage>();
         builder.Services.AddSingleton<RegistrationPage>();
         builder.Services.AddSingleton<HorseDetailPage>();
+        builder.Services.AddSingleton<LoginPage>();
+        builder.Services.AddSingleton<RegistrationPage>();
  ;
 
         builder.Services.AddSingleton<MainViewModel>();
@@ -33,14 +35,12 @@ public static class MauiProgram
         builder.Services.AddSingleton<PersonDetailViewModel>();
         builder.Services.AddSingleton<HorseViewModel>();
         builder.Services.AddSingleton<HorseDetailViewModel>();
+        builder.Services.AddSingleton<LoginViewModel>();
+        builder.Services.AddSingleton<RegistrationViewModel>();
 
 
 
 
-
-#if DEBUG
-        builder.Logging.AddDebug();
-#endif
         return builder.Build();
     }
 }

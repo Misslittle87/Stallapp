@@ -2,6 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Stallapp.View.LoginPage"
+             xmlns:model="clr-namespace:Stallapp.Model"
+             xmlns:viewmodel="clr-namespace:Stallapp.ViewModel"
+             x:DataType="viewmodel:LoginViewModel"
              Shell.FlyoutBehavior="Disabled"
              Shell.NavBarIsVisible="False"
              Title="Stallapp">
@@ -18,13 +21,14 @@
                            Grid.Row="0"/>
                 <VerticalStackLayout Grid.Row="1">
                     <Label Text="Email:" Margin="5"/>
-                    <Entry Text="{Binding UserNameEmail}" Placeholder="Email" Margin="5"/>
+                    <Entry Placeholder="Email" Margin="5"
+                           Text="{Binding UserName}"/>
                     <Label Text="Lösenord:" Margin="5"/>
-                    <Entry Text="{Binding Password}" IsPassword="True" Placeholder="Lösenord" Margin="5"/>
-                    <CheckBox IsChecked="False"/>
-                    <Label Text="Kom ihåg mig"/>
-                    <Button Text="Login" Clicked="Button_Clicked"/>
-                    <Label Text="Register">
+                    <Entry IsPassword="True" Placeholder="Lösenord" Margin="5"
+                           Text="{Binding Password}"/>
+                    <Button Text="Login"
+                            Command="{Binding LoginCommand}"/>
+                    <Label Text="Registrera">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                         </Label.GestureRecognizers>

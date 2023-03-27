@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Stallapp.Model
+﻿namespace Stallapp.Model
 {
-    internal class UserInfoModel
+    [Table("User")]
+    public class UserInfoModel
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        [MaxLength(250)]
+        public string UserName { get; set; }
+        public string Password { get; set; }
     }
 }

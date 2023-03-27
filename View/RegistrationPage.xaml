@@ -2,10 +2,29 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Stallapp.View.RegistrationPage"
-             Shell.FlyoutBehavior="Disabled"             
+             xmlns:viewmodel="clr-namespace:Stallapp.ViewModel"
+             xmlns:model="clr-namespace:Stallapp.Model"
+             x:DataType="viewmodel:RegistrationViewModel"
              Title="RegistrationPage">
-    
-    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+    <ScrollView>
+        <VerticalStackLayout>
         <Label Text="Registrera"/>
+        <Entry Placeholder="Email/Användarnamn"
+               Text="{Binding UserName}"/>
+        <Entry Placeholder="Lösenord" IsPassword="True"
+               Text="{Binding Password}"/>
+        <Button Text="Registrera"
+                Command="{Binding AddCommand}"/>
+
+        <CollectionView ItemsSource="{Binding UserInfo}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:UserInfoModel">
+                        <Frame>
+                            <Label Text="{Binding UserName}"/>
+                        </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
