@@ -15,7 +15,14 @@
         [RelayCommand]       
         async Task Login()
         {
-
+            if(!string.IsNullOrEmpty(userName) || (!string.IsNullOrEmpty(password)))
+            {
+                var user = await LoginService.GetUser(userName,password);
+            }
+            else
+            {
+                await Shell.Current.DisplayAlert("Fel", "Användarnamnet eller lösenordet är fel", "OK");
+            }
             //if (string.IsNullOrEmpty(userName) && string.IsNullOrWhiteSpace(Password))
             //{
             //    foreach (UserInfoModel user in UserInfo)

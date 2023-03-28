@@ -40,10 +40,18 @@
             await Init();
             var users = await db.DeleteAsync<UserInfoModel>(id);
         }
-        public static async Task<List<UserInfoModel>> GetUser()
+        public static async Task<UserInfoModel> GetUser(string userName, string password)
         {
             await Init();
-            var user = await db.Table<UserInfoModel>().ToListAsync();
+            var user = await db.Table<UserInfoModel>().Where(u => u.UserName == userName && u.Password == password).FirstOrDefaultAsync();
+            if (user == null)
+            {
+                await Shell.Current.DisplayAlert("Fel", "Finns inte", "OK");
+            }
+            else
+            {
+                await Shell.Current.GoToAsync($"//{nameof(MainPage)}");
+            }            
             return user;
         }
     }
