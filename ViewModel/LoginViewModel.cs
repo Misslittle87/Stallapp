@@ -15,10 +15,7 @@
         [RelayCommand]       
         async Task Login()
         {
-            if (userName == UserName)
-            {
-                
-            }
+
             //if (string.IsNullOrEmpty(userName) && string.IsNullOrWhiteSpace(Password))
             //{
             //    foreach (UserInfoModel user in UserInfo)

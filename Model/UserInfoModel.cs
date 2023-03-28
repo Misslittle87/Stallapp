@@ -1,6 +1,5 @@
 ﻿namespace Stallapp.Model
 {
-    [Table("User")]
     public class UserInfoModel
     {
         [PrimaryKey, AutoIncrement]

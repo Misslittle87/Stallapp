@@ -22,23 +22,8 @@
                 return;
             }
             else
-            {
-                foreach (UserInfoModel user in UserInfo)
-                {
-                    if (user.UserName == userName)
-                    {
-                        await LoginService.AddUser(userName, password);
-                        UserInfo.Clear();
-                        var userPassword = await LoginService.GetUser();
-                        UserInfo.AddRange(userPassword);
-                        await Shell.Current.DisplayAlert("Lycka", "Du är registrerad", "OK");
-                    }
-                    else
-                    {
-                        await Shell.Current.DisplayAlert("Fel", "Finns redan", "ok");
-                    }
-                }               
-
+            {                 
+                await LoginService.AddUser(userName, password);                
             }
         }
     }

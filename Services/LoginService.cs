@@ -13,20 +13,32 @@
             db = new SQLiteAsyncConnection(databasePath);
             await db.CreateTableAsync<UserInfoModel>();
         }
-        public static async Task AddUser( string userName, string password)
+        public static async Task AddUser(string userName, string password)
         {
             await Init();
-            var user = new UserInfoModel
-            {                   
-                UserName = userName,
-                Password = password
-            };
-            var id = await db.InsertAsync(user);
+
+            var users = await db.Table<UserInfoModel>().Where(u => u.UserName == userName).FirstOrDefaultAsync();
+            if (users == null)
+            {
+                var user = new UserInfoModel
+                {
+                    UserName = userName,
+                    Password = password
+                };
+                var id = await db.InsertAsync(user);
+                await Shell.Current.DisplayAlert("Lycka", "Du är registrerad", "OK");
+            }
+            else
+            {
+                await Shell.Current.DisplayAlert("Fel!","Användaren finns redan","OK");
+            }
+
+            
         }
         public static async Task RemoveUser(int id)
         {
             await Init();
-            await db.DeleteAsync<UserInfoModel>(id);
+            var users = await db.DeleteAsync<UserInfoModel>(id);
         }
         public static async Task<List<UserInfoModel>> GetUser()
         {
