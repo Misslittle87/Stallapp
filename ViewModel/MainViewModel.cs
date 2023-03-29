@@ -4,8 +4,16 @@
 namespace Stallapp.ViewModel
 {
     public partial class MainViewModel : BaseViewModel
-    {        
+    {  
+        ObservableRangeCollection<UserInfoModel> _users {  get; set; }
         [ObservableProperty]
         DateTime currentDate = DateTime.Now;
+
+        [ObservableProperty]
+        public string loginName;
+        public MainViewModel()
+        {
+            _users = new ObservableRangeCollection<UserInfoModel>();
+        }
     }
 }

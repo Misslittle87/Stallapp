@@ -1,8 +1,4 @@
-﻿using Stallapp.Model;
-using Stallapp.View;
-using System.Collections.ObjectModel;
-
-// Här kan user/inhyrd lägga till sin häst.
+﻿// Här kan user/inhyrd lägga till sin häst.
 
 namespace Stallapp.ViewModel
 {

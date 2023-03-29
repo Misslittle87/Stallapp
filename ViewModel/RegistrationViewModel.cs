@@ -5,7 +5,7 @@
         public ObservableRangeCollection<UserInfoModel> UserInfo { get; set; } = new ObservableRangeCollection<UserInfoModel>();
         public RegistrationViewModel()
         {
-            //UserInfo = new ObservableRangeCollection<UserInfoModel>();
+            
         }
 
         [ObservableProperty]

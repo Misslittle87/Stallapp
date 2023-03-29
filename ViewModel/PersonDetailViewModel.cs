@@ -1,6 +1,4 @@
-﻿using Stallapp.Model;
-
-//Denna sidan är till för att varje user/inhyrd ska kunna lägga till kontakter som tex hovslagare, veterinär och andra anhöriga,
+﻿//Denna sidan är till för att varje user/inhyrd ska kunna lägga till kontakter som tex hovslagare, veterinär och andra anhöriga,
 // och att man ska kunna kompiera/ringa från appen.
 
 namespace Stallapp.ViewModel

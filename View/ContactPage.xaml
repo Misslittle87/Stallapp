@@ -8,6 +8,7 @@
              Title="ContactPage">
     
     <Grid RowDefinitions="*,auto">
+        <Label Text="{Binding Text}"/>
         <Button Text="Lägg till en kontakt"></Button>
     </Grid>
 </ContentPage>

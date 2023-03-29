@@ -30,7 +30,7 @@
                     <VerticalStackLayout Grid.Column="1"
                                Grid.Row="2"
                                HorizontalOptions="Center">
-                        <Label Text="Välkommen, Sofia"
+                        <Label Text="{Binding LoginName}"
                                FontSize="20"
                                />
                         <Label Text="Du har inga avviseringar idag!" Margin="5"/>
