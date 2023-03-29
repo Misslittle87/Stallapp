@@ -20,7 +20,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:UserInfoModel">
                         <Frame>
-                            <Label Text="{Binding UserName}"/>
+                            <Label Text="{Binding Password}"/>
                         </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
